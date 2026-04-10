@@ -16,7 +16,7 @@ def get_bot_response(user_input: str) -> str:
         }
 
         payload = {
-    "model": "openchat/openchat-7b:free",
+    "model": "meta-llama/llama-3-8b-instruct:free",
     "messages": [
         {"role": "system", "content": "You are a helpful AI assistant."},
         {"role": "user", "content": user_input}
