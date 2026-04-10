@@ -16,7 +16,7 @@ def get_bot_response(user_input: str) -> str:
         }
 
         payload = {
-    "model": "meta-llama/llama-3-8b-instruct:free",
+    "model": "meta-llama/llama-3-8b-instruct",
     "messages": [
         {"role": "system", "content": "You are a helpful AI assistant."},
         {"role": "user", "content": user_input}
