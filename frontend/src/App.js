@@ -16,7 +16,7 @@ function App() {
     setMessage("");
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/chat", {
+      const res = await axios.post("https://ai-chatbot-07vk.onrender.com/chat", {
         text: message,
       });
 
