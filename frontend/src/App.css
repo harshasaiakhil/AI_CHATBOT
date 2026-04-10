@@ -1,14 +1,36 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #343541;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
 }
 
-/* Main layout */
+/* App layout */
 .app {
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+/* 🔥 Header */
+.header {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #38bdf8;
+}
+
+.header p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #94a3b8;
 }
 
 /* Chat window */
@@ -21,7 +43,7 @@ body {
 /* Chat rows */
 .chat-row {
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .chat-row.user {
@@ -34,45 +56,68 @@ body {
 
 /* Message bubbles */
 .bubble {
-  max-width: 60%;
+  max-width: 65%;
   padding: 12px 15px;
-  border-radius: 10px;
+  border-radius: 12px;
   line-height: 1.5;
+  animation: fadeIn 0.3s ease-in;
 }
 
+/* User bubble */
 .user .bubble {
-  background: #19c37d;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   color: white;
 }
 
+/* Bot bubble */
 .bot .bubble {
-  background: #444654;
-  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  color: #e2e8f0;
 }
 
 /* Input bar */
 .input-bar {
   display: flex;
   padding: 15px;
-  background: #40414f;
-  border-top: 1px solid #555;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .input-bar input {
   flex: 1;
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   outline: none;
-  font-size: 14px;
+  background: #1e293b;
+  color: white;
 }
 
 .input-bar button {
   margin-left: 10px;
   padding: 12px 16px;
   border: none;
-  background: #19c37d;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
   color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-bar button:hover {
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

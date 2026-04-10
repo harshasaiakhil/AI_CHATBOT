@@ -24,6 +24,10 @@ function App() {
       setChat((prev) => [...prev, botMsg]);
     } catch (err) {
       console.error(err);
+      setChat((prev) => [
+        ...prev,
+        { sender: "bot", text: "⚠️ Server error. Try again." },
+      ]);
     }
   };
 
@@ -33,6 +37,12 @@ function App() {
 
   return (
     <div className="app">
+      {/* 🔥 Header */}
+      <div className="header">
+        <h1>AI_CHATBOT</h1>
+      </div>
+
+      {/* 💬 Chat */}
       <div className="chat-window">
         {chat.map((msg, index) => (
           <div key={index} className={`chat-row ${msg.sender}`}>
@@ -42,11 +52,12 @@ function App() {
         <div ref={chatEndRef}></div>
       </div>
 
+      {/* ⌨️ Input */}
       <div className="input-bar">
         <input
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Message Chatbot..."
+          placeholder="Type your message..."
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
         <button onClick={sendMessage}>➤</button>
