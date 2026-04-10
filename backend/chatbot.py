@@ -16,12 +16,12 @@ def get_bot_response(user_input: str) -> str:
         }
 
         payload = {
-            "model": "mistralai/mistral-7b-instruct:free",
-            "messages": [
-                {"role": "system", "content": "You are a helpful AI assistant."},
-                {"role": "user", "content": user_input}
-            ]
-        }
+    "model": "openchat/openchat-7b:free",
+    "messages": [
+        {"role": "system", "content": "You are a helpful AI assistant."},
+        {"role": "user", "content": user_input}
+    ]
+}
 
         response = requests.post(API_URL, headers=headers, json=payload, timeout=10)
         data = response.json()
